@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Test</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <body>
+    <center><h1 style="color: white">Начни майнить монеты прямо сейчас!</h1></center>
+    <center><button>майнить</button></center>
+    <br><button id="payButton">удлинить майнинг</button><button>увеличить монеты в секунду</button>
+    <script>
+        let tg = window.Telegram.WebApp;  // Инициализация WebApp
+        tg.expand();  // Развернуть WebApp на весь экран
+
+        document.getElementById("payButton").addEventListener("click", () => {
+            tg.sendData(JSON.stringify({action: "button_clicked", value: "Привет из WebApp!"}));
+        });
+    </script>
+  </body>
+</html>
